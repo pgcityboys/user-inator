@@ -16,13 +16,14 @@ public class UserController {
 	private final UserService userService;
 
 	@PostMapping
-	public ResponseEntity<User> registerUser(@RequestBody String email) {
+	public ResponseEntity<User> registerUser(@RequestBody CreateUserRequest request) {
 		try {
-			User user = userService.findUser(email);
+			User user = userService.findUser(request.email());
 			return new ResponseEntity<>(user, HttpStatus.OK);
 		}
 		catch (Exception e) {
-			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+			userService.saveUser(request.email());
+			return new ResponseEntity<>(null, HttpStatus.OK);
 		}
 	}
 

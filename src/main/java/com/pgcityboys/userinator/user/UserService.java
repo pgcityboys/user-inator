@@ -12,4 +12,8 @@ public class UserService {
 	public User findUser(String email) throws Exception {
 		return userRepository.findById(email).orElseThrow(() -> new Exception("Invalid email"));
 	}
+
+	public void saveUser(String email) {
+		userRepository.save(new User(email));
+	}
 }
