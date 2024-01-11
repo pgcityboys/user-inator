@@ -5,7 +5,6 @@ import com.pgcityboys.userinator.route.dtos.SaveRouteRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.sql.RowId;
 import java.util.List;
 
 @Service
@@ -50,4 +49,5 @@ public class RouteService {
 
 		return new RoutesStatsResponse(totalCO2, totalCost);
 	}
+
 }

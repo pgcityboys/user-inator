@@ -16,4 +16,5 @@ public class UserService {
 	public void saveUser(String email) {
 		userRepository.save(new User(email));
 	}
+
 }
