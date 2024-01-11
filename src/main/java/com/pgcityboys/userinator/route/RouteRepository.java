@@ -8,5 +8,5 @@ import java.util.List;
 @Repository
 public interface RouteRepository extends JpaRepository<Route, Long> {
 
-	List<Route> findRoutesByEmailOrderByDateTime(String email);
+	List<Route> findRoutesByEmailOrderByDateTimeDesc(String email);
 }
